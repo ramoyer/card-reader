@@ -1,3 +1,7 @@
+// Code designed to read the data from an MIT id card using a Teensy 3.2.
+// These cards recieve power at 125khz and transmit back at 62.5khz and 187.5khz
+// More information available at ramoyer.com/2018/08/Card-Reader.html
+
 #include <FrequencyTimer2.h>
 
 #define numSamples 20000
@@ -26,8 +30,8 @@ void setup() {
 void loop() {
   // delay while interrupts gather some data. 
   // 3 seconds is to keep from overwhelming user with data. 
-  // Only needs numsamples/freq for reading
-  delay(1000);
+  // Only needs time of numsamples/freq for reading
+  delay(3000);
   
   //Print the data
   noInterrupts();
